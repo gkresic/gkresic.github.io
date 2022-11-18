@@ -1,0 +1,11 @@
+Local server:
+
+	bundle exec jekyll serve
+
+Ako neki paket fali:
+
+	bundle add <gem name>
+
+	# možda treba i
+
+	bundle install
