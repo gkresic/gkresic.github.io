@@ -22,9 +22,11 @@ lang: en
 timezone: Europe/Zagreb
 
 markdown: kramdown
-theme: jekyll-text-theme  # https://github.com/kitian616/jekyll-TeXt-theme
+#theme: jekyll-text-theme  # https://github.com/kitian616/jekyll-TeXt-theme
+remote_theme: kitian616/jekyll-text-theme
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
