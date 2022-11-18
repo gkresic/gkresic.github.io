@@ -9,7 +9,7 @@ full_width: false
 
 **Full name**: Gordan Krešić
 
-**Residence**: Zagreb, Croatia (UTC+[1|2])
+**Residence**: Zagreb, Croatia (UTC+[1\|2])
 
 **Specialities**: High-performance Java, API design and distributed systems
 
