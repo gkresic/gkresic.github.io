@@ -50,4 +50,4 @@ gem "jekyll-sitemap", "~> 1.4"
 
 gem "jemoji", "~> 0.12.0"
 
-gem "jekyll-text-theme"
+gem 'jekyll-text-theme', '~> 2.2'
