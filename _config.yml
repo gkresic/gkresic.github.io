@@ -44,6 +44,9 @@ defaults:
       full_width: false
       excerpt_separator: <!--more-->
 
+paths:
+  rss: /feed.xml
+
 text_skin: default
 highlight_theme: tomorrow
 
