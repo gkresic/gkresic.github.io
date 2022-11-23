@@ -18,9 +18,9 @@ Problem is that it's usually not simple - if even possible - to synchronize upgr
 
 Instead, we need to somehow:
 
-1) For some transitional period support both deprecated and new elements in our API.
+1. For some transitional period support both deprecated and new elements in our API.
    Note that this implies that we can not delete anything before deprecating it first.
-2) Detect and track usage of all those deprecated elements and log it somewhere,
+2. Detect and track usage of all those deprecated elements and log it somewhere,
    so that we know when it's safe to completely remove them from our API. As a bonus, it would be nice to somehow signal
    to the clients whenever they request something that is being deprecated, so that they could automatically
    detect changes in our API without requiring them to poll our API docs regularly.
