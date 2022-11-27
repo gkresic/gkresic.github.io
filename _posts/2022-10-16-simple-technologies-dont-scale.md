@@ -42,13 +42,13 @@ Unfortunately, forces driving developers to seek solutions in simpler tools are 
 Recently I had to publish a new library to the Maven Central repository.
 In short, these are the [steps](https://central.sonatype.org/publish/requirements/) I had to follow:
 
-1) Verify my domain, so I could get permission to publish my artifacts under reverse domain group ID.
-2) Generate PGP keypair and sign release. I had an existing PGP keypair, but it expired, so I had to google how to extend it.
-3) Publish the public key so anyone who downloads my artifacts can verify their authenticity.
-4) Figure out how Maven Central treats `-SNAPSHOT` releases and how it treats regular releases.
-5) Satisfy various Maven Central conventions to be allowed to publish my artifacts.
-6) Setup Gradle build for this whole workflow.
-7) Setup GitHub Action to automatically publish new artifacts when I tag my repo.
+1. Verify my domain, so I could get permission to publish my artifacts under reverse domain group ID.
+2. Generate PGP keypair and sign release. I had an existing PGP keypair, but it expired, so I had to google how to extend it.
+3. Publish the public key so anyone who downloads my artifacts can verify their authenticity.
+4. Figure out how Maven Central treats `-SNAPSHOT` releases and how it treats regular releases.
+5. Satisfy various Maven Central conventions to be allowed to publish my artifacts.
+6. Setup Gradle build for this whole workflow.
+7. Setup GitHub Action to automatically publish new artifacts when I tag my repo.
 
 Although I have considerate experience using Java and its tooling, these steps took me **almost the whole day**.
 I never published the NPM module, but [from what I could read](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)
