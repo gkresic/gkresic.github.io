@@ -52,14 +52,17 @@ In short, these are the [steps](https://central.sonatype.org/publish/requirement
 
 Although I have considerate experience using Java and its tooling, these steps took me **almost the whole day**.
 I never published the NPM module, but [from what I could read](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)
-their rules look much simpler. Cargo is notorious for allowing you to
-[depend directly on the Git repository](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories).
-Certainly, both look like they are much easier to use.
-And they probably are. At least until you first [miss](https://arstechnica.com/information-technology/2016/03/rage-quit-coder-unpublished-17-lines-of-javascript-and-broke-the-internet/)
-strict publishing rules or meet issues reproducing builds of your old project that referenced deleted Git repo.
-Also, I have no doubt that at some point both NPM and Cargo will tight up their rules and force their users
-do most of the complex steps Maven Central requires today, at which point someone will decide that they have also became
-"bloated", invent New Simple Tool and a new cycle will begin.
+their rules look much simpler. Also, there are other ways beside liberal publishing rules,
+used to simplify declaring dependency graphs like depending directly on Git repositories which is supported by
+[many](https://docs.npmjs.com/cli/v9/configuring-npm/package-json#git-urls-as-dependencies)
+[build](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories)
+[tools](https://blog.gradle.org/introducing-source-dependencies). Even [complete services](https://jitpack.io/)
+are built to offer such functionality. And I have to admit that all these factors make build tools much easier to use.
+At least until you first [miss](https://arstechnica.com/information-technology/2016/03/rage-quit-coder-unpublished-17-lines-of-javascript-and-broke-the-internet/)
+strict publishing rules or meet issues reproducing builds of your old project that referenced deleted Git tag
+or even whole repository. Also, I have no doubt that at some point most build tools will tighten up their rules and force
+their users to do most of the complex steps Maven Central requires today. At which point someone will decide that they have
+also become "bloated", invent New Simple Tool and a new cycle will begin.
 
 I admit it may be a bit opinionated, but I believe that at least to some degree, these cycles are caused by
 [programmers migrating to management](/stop-promoting-programmers), hampering transfer of knowledge
