@@ -2,11 +2,11 @@
 title: Simple technologies don't scale
 permalink: simple-technologies-dont-scale
 ---
-Most of us are intimidated by big, complex problems. And since most of us are a bit cocky (in a positive way!)
-we are often inclined to dismiss inherited complex products and technologies as "old" or "bloated" and tend to solve
-every problem with "refactor" using some "new technology". Similarly, we tend to dismiss as "not needed"
-most of the things we don't understand. Don't know about you, but I have to confess that throughout my career
-I have sinned on all of those accounts.
+As programmers, most of us are intimidated by big, complex problems. And since most of us are a bit cocky too
+(in a positive way!) we are often inclined to dismiss inherited complex products and technologies as "old" or "bloated"
+and tend to solve every problem with "refactor" using some "new technology". Similarly, we tend to dismiss as
+"not needed" most of the things we don't understand. Don't know about you, but I have to confess that throughout
+my career I have sinned on all of those accounts.
 
 <!--more-->
 
@@ -15,13 +15,13 @@ They are complex because problems they are supposed to solve are... guess what..
 I've seen many cycles in which the New Tech emerges, much simpler to use than the Old Tech. Demos are appealing,
 conferences overflowed with talks about it. Gradually, new programmers adopt New Tech and start building
 complex projects around it. However, as their projects grow in size, certain problems start to emerge,
-problems nobody envisioned during New Tech's demo days. One after another, new features are added to New Tech,
+problems new programmers simply didn't envision during New Tech's demo days. One after another, new features are added to New Tech,
 everyone happily adopts them (since they are now aware why they need them) and for some time everyone is happy.
 However, since the arrow of time goes irreversibly forward, even newer programmers start joining the team
 and they start perceiving this New Tech as "bloated". Soon, the Even Newer Tech emerges,
 much simpler to use than the New Tech. Demos are appealing, conferences overflowed with talks and a new cycle begins.
 
-I've seen these cycles multiple times:
+So far I've seen these cycles multiple times, but let me give you just a few popular examples:
 
 * Java started its life as a simplified C++. Over time, JDK grew in size from having 212 classes
   in version 1.0 to 4,124 classes in JDK 19. Add to that **order of magnitude** more classes from Java's ecosystem
@@ -31,7 +31,7 @@ I've seen these cycles multiple times:
 * PHP was born around the same time as Java and back then it didn't have even basic constructs as an `if` statement.
   Today, PHP has advanced concepts like class inheritance and no less than 8,745 built-in functions.
 
-* JavaScript was born at that time, too. I can't find exact size of standard library it had in version 1.0,
+* JavaScript was born at that time, too. I can't find the exact size of the standard library it had in version 1.0,
   but I do remember that I went through everything there was to read about it in a **single weekend**.
   Today's JavaScript is mastery of asynchronous programming, has class inheritance and an unimaginably huge ecosystem.
 
@@ -57,7 +57,7 @@ used to simplify declaring dependency graphs like depending directly on Git repo
 [many](https://docs.npmjs.com/cli/v9/configuring-npm/package-json#git-urls-as-dependencies)
 [build](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories)
 [tools](https://blog.gradle.org/introducing-source-dependencies). Even [complete services](https://jitpack.io/)
-are built to offer such functionality. And I have to admit that all these factors make build tools much easier to use.
+are built to offer such functionality. And I have to admit that these factors actually do make build tools much easier to use.
 At least until you first [miss](https://arstechnica.com/information-technology/2016/03/rage-quit-coder-unpublished-17-lines-of-javascript-and-broke-the-internet/)
 strict publishing rules or meet issues reproducing builds of your old project that referenced deleted Git tag
 or even whole repository. Also, I have no doubt that at some point most build tools will tighten up their rules and force
