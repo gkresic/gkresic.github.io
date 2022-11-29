@@ -47,19 +47,20 @@ are relatively simple to handle, but they also represent a minority of cases whe
 
 Far more common and way more challenging are the changes within data structures used in requests and/or responses.
 One common scenario is deprecating a property in one of your entities or replacing it with another,
-often of different type. For example, let's say we have an entity called `User` that has text property `role`
+often of different type. For example, let's say we have an entity called `User` that has a property named `role`
 which designates what role within our app that user should have (like `viewer`, `manager`, `admin` etc.).
 Let's also say that at some point we need to support users that can be assigned to more than one role.
 In this case, just dropping `role` property from our model is not feasible, since existing clients still expect it.
 Instead, we'll probably decide to go with backward-compatible upgrade: keep `role`,
-but introduce new property `roles` of type `List<Role>`. For some transitional period, we'll initialize `role`
-with first (or highest, or whatever suits our business domain) role in our new data model so that old clients
-have at least something to work with and `roles` will hold all of them and be used by upgraded clients.
+but introduce new property `roles` of type `List<Role>`. For some transitional period, we'll use them both simultaneously,
+with `role` containing the first (or highest, or whatever suits our business domain) role in our new data model so that old
+clients have at least something to work with and `roles` will hold all of them and be used by upgraded clients.
 Over time, clients will be upgraded to read `roles` instead of `role` and we would be able to drop `role` from our model.
-Obvious question is: when is it safe to drop deprecated `role` property? How do we know that all clients are upgraded?
+Obvious question is: **when** is it safe to drop a deprecated `role` property?
+How do we know that all clients are upgraded?
 
 On a side note, note that applying version numbers to your API basically turns this second (complicated) problem
-into first (easy) one, but at the cost of very expensive migrations.
+into the first (easy) one, but at the cost of very expensive migrations.
 
 Now, is there a way to handle both of these changes **without** applying versioning to our API?
 
@@ -69,12 +70,13 @@ If an app receives a request on a deprecated endpoint it shouldn't be too compli
 to convert that request into a new form. Important: **don't rewrite request URLs** on your reverse proxy,
 since that will prevent you from detecting those deprecated requests in your application.
 
-Tracking usage of certain properties from our data model is far more complicated. Since they are used by the client,
-the only way to detect their usage is by requiring the client to provide that information when making an API request.
-That specification may be purely informational, but it's much more error-proof if you actually return back to the client
-only properties it explicitly requested. This way there will never be any discrepancy between properties that client
-says it's requesting and what it's actually being read on its side.
-Fortunately, there are
+Tracking usage of certain properties from our data model, especially when used in API responses, is far more complicated.
+Since they are used by the client, the only way to detect their usage is by requiring the client to provide
+that information when making an API request. That specification may be purely informational,
+but it's much more error-proof if you actually return back to the client data structures that have initialized
+only the properties that client explicitly requested. That way there will never be any discrepancy between
+properties that client says it's requesting and what it's actually being read on its side and API service will have
+detailed information on which clients are reading which properties from the data model. Fortunately, there are
 [many](https://graphql.org/#without-versions)
 [protocols](https://jsonapi.org/format/#fetching-sparse-fieldsets)
 [already](https://www.odata.org/)
