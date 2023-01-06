@@ -1,6 +1,7 @@
 /.idea/
 /.sass-cache/
-/_site/
 /.jekyll-metadata
+/_site/
+/local/
 /blog.iml
 /Gemfile.lock
