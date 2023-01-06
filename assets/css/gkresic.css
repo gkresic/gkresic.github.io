@@ -6,6 +6,12 @@
 	display: none;
 }
 
+a, a:link, a:visited {
+	color: inherit;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
 .center {
   text-align: center;
 }
