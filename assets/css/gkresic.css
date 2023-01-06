@@ -5,3 +5,7 @@
 .article__section-navigator {
 	display: none;
 }
+
+.center {
+  text-align: center;
+}
